@@ -8,7 +8,12 @@ class RedisClient {
     }
 
     isAlive(){
-        return this.client.isAlive = true;
+        const alive = this.client.isAlive = true;
+        if (alive) {
+            return alive;
+        } else {
+            return false;
+        }
     }
 
     async get(key){
